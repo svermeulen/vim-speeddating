@@ -102,9 +102,9 @@ function! speeddating#increment(increment)
     endif
   endfor
   if a:increment > 0
-    exe "norm ". a:increment."\<Plug>SpeedDatingFallbackUp"
+    exe "norm! ". a:increment."\<c-a>"
   else
-    exe "norm ".-a:increment."\<Plug>SpeedDatingFallbackDown"
+    exe "norm! ".-a:increment."\<c-x>"
   endif
   silent! call repeat#set("\<Plug>SpeedDating" . (a:increment < 0 ? "Down" : "Up"),a:increment < 0 ? -a:increment : a:increment)
 endfunction
